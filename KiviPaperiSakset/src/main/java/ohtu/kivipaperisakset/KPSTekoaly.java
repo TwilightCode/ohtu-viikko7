@@ -3,15 +3,16 @@ package ohtu.kivipaperisakset;
 public class KPSTekoaly implements Peli {
 
     IO lukija;
+    Tekoaly tekoaly;
 
-    public KPSTekoaly(IO lukija) {
+    public KPSTekoaly(IO lukija, Tekoaly tekoaly) {
         this.lukija = lukija;
+        this.tekoaly = tekoaly;
     }
 
     @Override
     public void pelaa() {
         Tuomari tuomari = new Tuomari();
-        Tekoaly tekoaly = new Tekoaly();
         String ekanSiirto;
         String tokanSiirto;
 

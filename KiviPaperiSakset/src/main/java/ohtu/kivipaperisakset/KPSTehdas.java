@@ -9,8 +9,8 @@ public class KPSTehdas {
     public KPSTehdas(IO lukija) {
         pelit = new HashMap<String, Peli>();
         pelit.put("a", new KPSPelaajaVsPelaaja(lukija));
-        pelit.put("b", new KPSTekoaly(lukija));
-        pelit.put("c", new KPSParempiTekoaly(lukija));
+        pelit.put("b", new KPSTekoaly(lukija, new TekoalyPerus()));
+        pelit.put("c", new KPSTekoaly(lukija, (new TekoalyParannettu(20))));
         pelit.put("tuntematon", new Tuntematon());
     }
 
