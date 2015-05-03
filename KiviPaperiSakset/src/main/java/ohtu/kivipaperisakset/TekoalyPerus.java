@@ -35,11 +35,6 @@ public class TekoalyPerus implements Pelaaja {
     }
 
     @Override
-    public String toString() {
-        return "tietokone valitsi" + syote + "\n";
-    }
-
-    @Override
     public String nimi() {
         return "tietokone valitsi: ";
     }
