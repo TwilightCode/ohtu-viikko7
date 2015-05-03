@@ -1,10 +1,11 @@
 package ohtu.kivipaperisakset;
 
 // "Muistava tekoäly"
-public class TekoalyParannettu implements Tekoaly {
+public class TekoalyParannettu implements Pelaaja {
 
     private String[] muisti;
     private int vapaaMuistiIndeksi;
+    private String syote = "";
 
     public TekoalyParannettu(int muistinKoko) {
         muisti = new String[muistinKoko];
@@ -26,13 +27,18 @@ public class TekoalyParannettu implements Tekoaly {
         vapaaMuistiIndeksi++;
     }
 
+    private String teeSiirto(String vastaus) {
+        syote = vastaus;
+        return vastaus;
+    }
+
     @Override
     public String annaSiirto() {
         int k = 0;
         int p = 0;
         int s = 0;
         if (vapaaMuistiIndeksi == 0 || vapaaMuistiIndeksi == 1) {
-            return "k";
+            return teeSiirto("k");
         }
 
         String viimeisinSiirto = muisti[vapaaMuistiIndeksi - 1];
@@ -56,15 +62,25 @@ public class TekoalyParannettu implements Tekoaly {
         // - jos papereita eniten, annetaan aina sakset
         // muulloin annetaan aina kivi
         if (k > p && k > s) {
-            return "p";
+            return teeSiirto("p");
         } else if (p > k && p > s) {
-            return "s";
+            return teeSiirto("s");
         } else {
-            return "k";
+            return teeSiirto("k");
         }
 
         // Tehokkaampiakin tapoja löytyy, mutta niistä lisää 
         // Johdatus Tekoälyyn kurssilla!
+    }
+
+    @Override
+    public String nimi() {
+        return "tietokone valitsi: ";
+    }
+
+    @Override
+    public String syote() {
+        return syote + "\n";
     }
 
 }

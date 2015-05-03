@@ -1,9 +1,12 @@
 package ohtu.kivipaperisakset;
 
-public interface Tekoaly {
+public interface Pelaaja {
 
     void asetaSiirto(String Siirto);
 
     String annaSiirto();
 
+    String nimi();
+
+    String syote();
 }
