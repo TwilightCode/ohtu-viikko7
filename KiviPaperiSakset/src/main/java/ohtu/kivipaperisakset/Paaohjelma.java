@@ -12,7 +12,7 @@ public class Paaohjelma {
                     + "\nmuilla valinnoilla lopetataan");
 
             String vastaus = lukija.lueSyote();
-            KPSTehdas pelitehdas = new KPSTehdas(lukija);
+            KPSTehdas pelitehdas = new KPSTehdas();
             System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
             pelitehdas.hae(vastaus).pelaa();
             break;

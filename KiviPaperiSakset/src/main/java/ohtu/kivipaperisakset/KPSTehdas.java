@@ -5,8 +5,10 @@ import java.util.HashMap;
 public class KPSTehdas {
 
     private HashMap<String, Peli> pelit;
+    IO lukija;
 
-    public KPSTehdas(IO lukija) {
+    public KPSTehdas() {
+        lukija = new SyotteenLukija();
         pelit = new HashMap<String, Peli>();
         pelit.put("a", KPS.LuoPelaajaVspelaaja(lukija));
         pelit.put("b", KPS.LuoPelaajaVstekoaly(lukija));
