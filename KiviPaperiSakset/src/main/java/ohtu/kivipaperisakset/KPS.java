@@ -26,6 +26,14 @@ public class KPS implements Peli {
         return new KPS(new TekoalyPerus(), new TekoalyParannettu(20));
     }
 
+    public static KPS LuoTekoalySatuVsParanneltuTekoaly() {
+        return new KPS(new TekoalySatu(), new TekoalyParannettu(20));
+    }
+
+    public static KPS LuoTekoalyVsTekoalySatu() {
+        return new KPS(new TekoalyPerus(), new TekoalySatu());
+    }
+
     private String pyydaSiirto(Pelaaja pelaaja) {
         String apu;
         System.out.print(pelaaja.nimi());

@@ -14,6 +14,8 @@ public class KPSTehdas {
         pelit.put("b", KPS.LuoPelaajaVstekoaly(lukija));
         pelit.put("c", KPS.LuoPelaajaVsParanneltuTekoaly(lukija));
         pelit.put("d", KPS.LuoTekoalyVsParanneltuTekoaly());
+        pelit.put("e", KPS.LuoTekoalyVsTekoalySatu());
+        pelit.put("f", KPS.LuoTekoalySatuVsParanneltuTekoaly());
         pelit.put("tuntematon", new Tuntematon());
     }
 

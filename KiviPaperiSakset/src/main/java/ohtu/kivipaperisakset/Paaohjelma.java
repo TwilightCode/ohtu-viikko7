@@ -9,7 +9,9 @@ public class Paaohjelma {
                     + "\n (a) ihmistä vastaan "
                     + "\n (b) tekoälyä vastaan"
                     + "\n (c) parannettua tekoälyä vastaan"
-                    + "\n (d) paina d, jos haluat nopean testin"
+                    + "\n (d) paina d, jos haluat nopean testin (TS vs PT)"
+                    + "\n (e) paina e, jos haluat nopean testin (T vs ST)"
+                    + "\n (f) paina f, jos haluat nopean testin (TS vs PT)"
                     + "\nmuilla valinnoilla lopetataan");
 
             String vastaus = lukija.lueSyote();

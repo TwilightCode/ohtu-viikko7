@@ -75,7 +75,7 @@ public class TekoalyParannettu implements Pelaaja {
 
     @Override
     public String nimi() {
-        return "tietokone valitsi: ";
+        return "tietokone Para valitsi: ";
     }
 
     @Override

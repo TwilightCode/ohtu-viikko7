@@ -1,12 +1,14 @@
 package ohtu.kivipaperisakset;
 
-public class TekoalyPerus implements Pelaaja {
+import java.util.Random;
 
-    int siirto;
-    String syote;
+public class TekoalySatu implements Pelaaja {
 
-    public TekoalyPerus() {
-        siirto = 0;
+    private final Random random = new Random();
+    private String syote;
+
+    @Override
+    public void asetaSiirto(String Siirto) {
     }
 
     private String teeSiirto(String vastaus) {
@@ -16,27 +18,21 @@ public class TekoalyPerus implements Pelaaja {
 
     @Override
     public String annaSiirto() {
-        siirto++;
-        siirto = siirto % 3;
-
-        if (siirto == 0) {
+        int i = random.nextInt(3);
+        if (i == 0) {
             return teeSiirto("k");
-        } else if (siirto == 1) {
+        } else if (i == 1) {
             return teeSiirto("p");
-        } else {
+        } else if (i == 2) {
             return teeSiirto("s");
+        } else {
+            return teeSiirto("");
         }
-
-    }
-
-    @Override
-    public void asetaSiirto(String ekanSiirto) {
-        // ei tehdä mitään 
     }
 
     @Override
     public String nimi() {
-        return "tietokone Perus valitsi: ";
+        return "tietokone Satu valitsi: ";
     }
 
     @Override
