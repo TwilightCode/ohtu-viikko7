@@ -22,6 +22,18 @@ public class KPS implements Peli {
         return new KPS(new IhmisPelaaja(lukija), new TekoalyParannettu(20));
     }
 
+    public static KPS LuoTekoalyVsParanneltuTekoaly() {
+        return new KPS(new TekoalyPerus(), new TekoalyParannettu(20));
+    }
+
+    private String pyydaSiirto(Pelaaja pelaaja) {
+        String apu;
+        System.out.print(pelaaja.nimi());
+        apu = pelaaja.annaSiirto();
+        System.out.print(pelaaja.syote());
+        return apu;
+    }
+
     @Override
     public void pelaa() {
         Tuomari tuomari = new Tuomari();
@@ -29,12 +41,9 @@ public class KPS implements Peli {
         String tokanSiirto;
 
         while (tuomari.jatketaanko()) {
-            System.out.print(pelaaja1.nimi());
-            ekanSiirto = pelaaja1.annaSiirto();
-            System.out.print(pelaaja1.syote());
-            System.out.print(pelaaja2.nimi());
-            tokanSiirto = pelaaja2.annaSiirto();
-            System.out.print(pelaaja2.syote());
+            ekanSiirto = pyydaSiirto(pelaaja1);
+            tokanSiirto = pyydaSiirto(pelaaja2);
+
             pelaaja1.asetaSiirto(tokanSiirto);
             pelaaja2.asetaSiirto(ekanSiirto);
 

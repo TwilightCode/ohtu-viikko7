@@ -7,6 +7,7 @@ public class Tuomari {
     private int tokanPisteet;
     private int tasapelit;
     private boolean jatkuu;
+    private int vuoro = 0;
 
     public Tuomari() {
         this.ekanPisteet = 0;
@@ -52,6 +53,10 @@ public class Tuomari {
     }
 
     public boolean jatketaanko() {
+        vuoro++;
+        if (vuoro > 500) {
+            return false;
+        }
         return jatkuu;
     }
 
